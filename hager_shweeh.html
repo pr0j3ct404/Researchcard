@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        body {
+            background: #0a0a12;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .id-card {
+            width: 85mm;
+            height: 54mm;
+            background: linear-gradient(135deg, #111122 0%, #1a1a3a 100%);
+            border: 2px solid #9400d3;
+            border-radius: 8px;
+            font-family: 'Share Tech Mono', monospace;
+            color: #00ff9d;
+            padding: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 25px #00bfff80;
+        }
+        .id-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                transparent 45%,
+                #00bfff10 50%,
+                transparent 55%
+            );
+            transform: rotate(30deg);
+            animation: scan 4s linear infinite;
+        }
+        @keyframes scan {
+            0% { transform: translateY(-100%) rotate(30deg); }
+            100% { transform: translateY(100%) rotate(30deg); }
+        }
+        .header {
+            border-bottom: 1px dashed #00bfff;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 14px;
+            color: #9400d3;
+        }
+        .title {
+            font-size: 18px;
+            text-align: center;
+            color: #00bfff;
+            text-shadow: 0 0 5px #00bfff80;
+        }
+        .employee-photo {
+            width: 25mm;
+            height: 25mm;
+            border: 1px solid #00ff9d;
+            background-color: #000;
+            float: left;
+            margin-right: 10px;
+            background-size: cover;
+            position: relative;
+        }
+        .employee-photo::after {
+            content: "SECURE CAPTURE";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            font-size: 8px;
+            color: #ff3131;
+        }
+        .info {
+            font-size: 10px;
+        }
+        .info-row {
+            margin-bottom: 5px;
+        }
+        .label {
+            color: #00bfff;
+            display: inline-block;
+            width: 30mm;
+        }
+        .value {
+            color: #00ff9d;
+        }
+        .clearance {
+            color: #ff3131;
+            font-weight: bold;
+        }
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 8px;
+            color: #9400d3;
+        }
+        .qr {
+            position: absolute;
+            right: 10px;
+            bottom: 25px;
+            width: 20mm;
+            height: 20mm;
+            border: 1px solid #00ff9d;
+            padding: 2px;
+        }
+        .glitch {
+            animation: glitch 2s infinite linear;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 #9400d3, -0.05em -0.025em 0 #00bfff; }
+            14% { text-shadow: 0.025em -0.05em 0 #9400d3, -0.025em 0.05em 0 #00bfff; }
+            15% { text-shadow: -0.05em 0 0 #9400d3, 0.05em 0.025em 0 #00bfff; }
+            49% { text-shadow: -0.025em 0.05em 0 #9400d3, 0.025em -0.05em 0 #00bfff; }
+            50% { text-shadow: 0.05em -0.025em 0 #9400d3, -0.05em 0 0 #00bfff; }
+            99% { text-shadow: 0.025em 0 0 #9400d3, -0.025em -0.025em 0 #00bfff; }
+            100% { text-shadow: -0.05em 0 0 #9400d3, 0.05em 0 0 #00bfff; }
+        }
+    </style>
+</head>
+<body>
+    <div class="id-card">
+        <div class="header">
+            <div class="logo">PROJECT 404</div>
+            <div class="title glitch">The RabbitHole</div>
+            <div class="logo">HOLE</div>
+        </div>
+
+        <div class="employee-photo">
+            <img src="SEARCH.gif" alt="Access QR Code" width="90" height="90"> </div>
+
+        <div class="info">
+            <div class="info-row">
+                <span class="label">AGENT ID:</span>
+                <span class="value">HOLE-<span id="agent-id">xqwuh</span></span>
+            </div>
+            <div class="info-row">
+                <span class="label">NAME:</span>
+                <span class="value" id="employee-name">Hager Shweeh</span>
+            </div>
+            <div class="info-row">
+                <span class="label">CLEARANCE:</span>
+                <span class="value clearance">LEVEL <span id="clearance">0</span></span>
+            </div>
+            <div class="info-row">
+                <span class="label">ROLE:</span>
+                <span class="value" id="role">Agent</span>
+            </div>
+            <div class="info-row">
+                <span class="label">DEPT:</span>
+                <span class="value">White Rabbit</span>
+            </div>
+            <div class="info-row">
+                <span class="label">VALID UNTIL:</span>
+                <span class="value">15-DEC-2025</span>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            UNAUTHORIZED ACCESS = TERMINATION & DATA PURGE
+        </div>
+    </div>
+
+
+</body>
+</html>
